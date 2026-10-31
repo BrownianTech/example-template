@@ -1,5 +1,6 @@
-_subdirectory: template
 _min_copier_version: "9.19.1"
+
+_subdirectory: template
 _answers_file: .copier-answers.[[ template_name ]].yml
 _envops:
   block_end_string: "%]"
@@ -38,10 +39,10 @@ question:
   #   [% endif %]"
   default: "[[ _external_data.parent_tpl.get('question', '') ]]"
 
-template_name:
+template_name:  # Useful for namespacing
   type: str
   default: 'example-template'
-  when: false  # hidden question
+  when: false  # hidden question: reusable variable with default value
 
 # Validation using Pydantic via extensions/validators.py
 validated_example:
